@@ -1,0 +1,56 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "nome": "Alexandre",
+      "email": "alexandre@email.com",
+      "telefone": "35999999999",
+      "data_nasc": "1991-07-01",
+      "cep": "37540-000",
+      "rua": "rua de teste",
+      "cidade": "Santa Rita do Sapucaí",
+      "numero": "116",
+      "bairro": "Novo Horizonte",
+      "estado": "Minas Gerais"
+    },
+    {
+      "id": 2,
+      "nome": "Pedro",
+      "email": "pedro@email.com",
+      "telefone": "35999999999",
+      "data_nasc": "1991-07-01",
+      "cep": "37540-000",
+      "rua": "rua de teste",
+      "cidade": "Santa Rita do Sapucaí",
+      "numero": "116",
+      "bairro": "Novo Horizonte",
+      "estado": "Minas Gerais"
+    },
+    {
+      "id": 3,
+      "nome": "João",
+      "email": "joão@email.com",
+      "telefone": "35999999999",
+      "data_nasc": "1991-07-01",
+      "cep": "37540-000",
+      "rua": "rua de teste",
+      "cidade": "Santa Rita do Sapucaí",
+      "numero": "116",
+      "bairro": "Novo Horizonte",
+      "estado": "Minas Gerais"
+    },
+    {
+      "nome": "alexandre da silva ribeiro",
+      "email": "alexandresilva58@gmail.com",
+      "telefone": "35999909615",
+      "data_nasc": "01/07/1991",
+      "cep": "37540-000",
+      "rua": "dos ipes",
+      "cidade": "SANTA RITA DO SAPUCAI / Minas Gerais",
+      "bairro": "NOVO HORIZONTE",
+      "numero": "116",
+      "estado": "Minas Gerais",
+      "id": 4
+    }
+  ]
+}
