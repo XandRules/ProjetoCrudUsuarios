@@ -6,6 +6,7 @@ import { ListarUsuarioComponent } from './listar-usuario/listar-usuario.componen
 const routes: Routes = [
   {path: '', component: ListarUsuarioComponent},
   {path: 'novo', component: CadastrarUsuarioComponent},
+  {path: 'editar/:id', component: CadastrarUsuarioComponent},
 ];
 
 @NgModule({

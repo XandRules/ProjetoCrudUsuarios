@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { MenuComponent } from './menu/menu.component';
-import { ButtonsModule, CardsModule, CheckboxModule, IconsModule, NavbarModule, WavesModule } from 'angular-bootstrap-md';
+import { ButtonsModule, CardsModule, CheckboxModule, IconsModule, InputsModule, InputUtilitiesModule, NavbarModule, WavesModule } from 'angular-bootstrap-md';
 import { CadastrarUsuarioComponent } from './cadastrar-usuario/cadastrar-usuario.component';
 import { ListarUsuarioComponent } from './listar-usuario/listar-usuario.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
-
+import { NgxMaskModule } from 'ngx-mask';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   declarations: [MenuComponent, CadastrarUsuarioComponent, ListarUsuarioComponent, FooterComponent],
@@ -22,9 +23,13 @@ import { NgxPaginationModule } from 'ngx-pagination';
     WavesModule,
     ButtonsModule,
     IconsModule,
+    InputsModule, 
+    InputUtilitiesModule,
     NgxPaginationModule,
     CardsModule,
-    CheckboxModule
+    CheckboxModule,
+    NgxMaskModule,
+    MatTableModule
   ],
   exports: [MenuComponent, CadastrarUsuarioComponent, ListarUsuarioComponent, FooterComponent],
 })

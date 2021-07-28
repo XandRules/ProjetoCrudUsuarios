@@ -19,4 +19,16 @@ export class UsuariosService {
   cadastrarNovoUsuario(usuario: Usuarios){
     return this.http.post(`${this.url}/usuarios`, usuario);
   }
+
+  excluirUsuario(id: number){
+    return this.http.delete(`${this.url}/usuarios/${id}`);
+  }
+
+  atualizarUsuario(usuario: Usuarios, id: number){
+    return this.http.put(`${this.url}/usuarios/${id}`, usuario);
+  }
+
+  getById(id: number){
+    return this.http.get(`${this.url}/usuarios/${id}`);
+  }
 }

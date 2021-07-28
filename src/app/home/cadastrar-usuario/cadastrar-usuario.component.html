@@ -1,7 +1,7 @@
 <div class="container mt-3 mb-3">
     <mdb-card>
         <mdb-card-title>
-            <h4 class="text-center mt-3">Cadastrar Novo Usuário</h4>
+            <h4 class="text-center mt-3">{{titulo}} Usuário</h4>
         </mdb-card-title>
 
         <mdb-card-body>
@@ -10,13 +10,14 @@
                 <div class="row mb-2">
                   <div class="col">
                     <div class="form-outline">
-                      <input type="text" id="nome" class="form-control" formControlName="nome" />
-                      <label class="form-label" for="nome">Nome</label>
+                        <input type="text" mdbValidate mdbInput  id="nome" class="form-control" formControlName="nome" />
+                        <label  for="nome">Nome</label>                   
+                      
                     </div>
                   </div>
                   <div class="col">
                     <div class="form-outline">
-                      <input type="email" id="email" class="form-control" formControlName="email"/>
+                      <input  mdbValidate mdbInput  type="email" id="email" class="form-control" formControlName="email"/>
                       <label class="form-label" for="email">E-mail</label>
                     </div>
                   </div>
@@ -25,19 +26,19 @@
                 <div class="row mb-2">
                   <div class="col-md-4">
                     <div class="form-outline">
-                      <input type="text" id="data_nasc" class="form-control" formControlName="data_nasc" />
+                      <input  mdbValidate mdbInput type="text" mask="d0/M0/0000" [leadZeroDateTime]="true" id="data_nasc" class="form-control" formControlName="data_nasc" />
                       <label class="form-label" for="data_nasc">Data de nascimento</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-outline">
-                      <input type="text" id="Telefone" class="form-control" formControlName="telefone" />
+                      <input  mdbValidate mdbInput type="text" id="Telefone" class="form-control" formControlName="telefone" />
                       <label class="form-label" for="Telefone">Telefone</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-outline">
-                      <input type="text" id="cep" class="form-control" formControlName="cep"/>
+                      <input  mdbValidate mdbInput type="text" id="cep" class="form-control" formControlName="cep"/>
                       <label class="form-label" for="cep">Cep</label>
                     </div>
                   </div>
@@ -46,19 +47,19 @@
                 <div class="row mb-2">
                   <div class="col-md-4">
                     <div class="form-outline">
-                      <input type="text" id="rua" class="form-control" formControlName="rua" />
+                      <input  mdbValidate mdbInput type="text" id="rua" class="form-control" formControlName="rua" />
                       <label class="form-label" for="rua">Rua</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-outline">
-                      <input type="text" id="numero" class="form-control" formControlName="numero" />
+                      <input  mdbValidate mdbInput type="text" id="numero" class="form-control" formControlName="numero" />
                       <label class="form-label" for="numero">Número</label>
                     </div>
                   </div>
                   <div class="col-md-4">
                     <div class="form-outline">
-                      <input type="text" id="bairro" class="form-control" formControlName="bairro" />
+                      <input  mdbValidate mdbInput type="text" id="bairro" class="form-control" formControlName="bairro" />
                       <label class="form-label" for="bairro">Bairro</label>
                     </div>
                   </div>
@@ -67,20 +68,20 @@
                 <div class="row mb-2">
                     <div class="col">
                       <div class="form-outline">
-                        <input type="text" id="cidade" class="form-control" formControlName="cidade" />
+                        <input  mdbValidate mdbInput type="text" id="cidade" class="form-control" formControlName="cidade" />
                         <label class="form-label" for="cidade">Cidade</label>
                       </div>
                     </div>
                     <div class="col">
                       <div class="form-outline">
-                        <input type="text" id="estado" class="form-control" formControlName="estado" />
+                        <input  mdbValidate mdbInput type="text" id="estado" class="form-control" formControlName="estado" />
                         <label class="form-label" for="estado">Estado</label>
                       </div>
                     </div>
                   </div>             
               
                 <!-- Submit button -->
-                <button type="submit" class="btn btn-primary btn-block mb-4 mt-4" (click)="salvarUsuario()">Salvar</button>
+                <button type="submit" [disabled]="!usuarioForm.valid"  class="btn btn-primary btn-block mb-4 mt-4" (click)="submitForm()">Salvar</button>
               </form>
         </mdb-card-body>
     </mdb-card>
