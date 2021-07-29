@@ -3,6 +3,7 @@ import { Usuarios } from '../models/usuarios.models';
 import { UsuariosService } from '../services/usuarios.service';
 import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-listar-usuario',
@@ -21,7 +22,7 @@ export class ListarUsuarioComponent implements OnInit {
       ['nome', 'email', 'telefone', 'data_nasc', 'cep', 'rua', 'cidade', 'bairro', 'numero', 'estado'];   
   dataSource: Usuarios[] = [];
 
-  constructor(private readonly usuarioService: UsuariosService, private readonly router: Router) { }
+  constructor(private readonly usuarioService: UsuariosService, private readonly router: Router, private toastr: ToastrService,) { }
 
   ngOnInit(): void {   
    
@@ -69,6 +70,9 @@ export class ListarUsuarioComponent implements OnInit {
       this.usuarios = usuarios;
       this.loading = false;
       this.usuarioVazio = this.usuarios.length > 0 ? false: true;
+    },(error)=> {
+      this.loading = false;
+      this.toastr.error('Erro ao acessar a base', 'Tente novamente!');
     })
   }
 

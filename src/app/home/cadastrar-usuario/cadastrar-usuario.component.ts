@@ -58,6 +58,9 @@ export class CadastrarUsuarioComponent implements OnInit, AfterContentChecked {
     this.usuarioService.cadastrarNovoUsuario(this.usuario).subscribe(usuario => {
       this.toastr.success('Usuário cadastrado', 'O usuário foi cadastrado com sucesso!');
       this.usuarioForm.reset();
+    },
+    (error)=> {
+      this.toastr.error('Usuário não cadastrado', 'O usuário não foi cadstrado!');
     })
   };
 
@@ -67,6 +70,8 @@ export class CadastrarUsuarioComponent implements OnInit, AfterContentChecked {
 
     this.usuarioService.atualizarUsuario(this.usuario, +this.route.snapshot.params.id ).subscribe(usuario => {
       this.toastr.success('Usuário atualizado', 'O usuário foi atualizado com sucesso!');
+    },(error)=> {
+      this.toastr.error('Usuário não atualizado', 'O usuário não foi atualizado!');
     })
   };
 
