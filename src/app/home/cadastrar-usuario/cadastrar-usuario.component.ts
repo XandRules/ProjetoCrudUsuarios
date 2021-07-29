@@ -20,6 +20,7 @@ export class CadastrarUsuarioComponent implements OnInit, AfterContentChecked {
   usuario: Usuarios;
   acao: string;
   titulo: string;
+  loading = false;
 
   constructor(private readonly formBuilder: FormBuilder,
      private readonly usuarioService: UsuariosService,
@@ -54,12 +55,15 @@ export class CadastrarUsuarioComponent implements OnInit, AfterContentChecked {
   salvarUsuario(){
 
     this.usuario = this.usuarioForm.value;
+    this.loading = true;
 
     this.usuarioService.cadastrarNovoUsuario(this.usuario).subscribe(usuario => {
       this.toastr.success('Usuário cadastrado', 'O usuário foi cadastrado com sucesso!');
+      this.loading = false;
       this.usuarioForm.reset();
     },
     (error)=> {
+      this.loading = false;
       this.toastr.error('Usuário não cadastrado', 'O usuário não foi cadstrado!');
     })
   };
@@ -67,10 +71,12 @@ export class CadastrarUsuarioComponent implements OnInit, AfterContentChecked {
   atualizarUsuario(){
 
     this.usuario = this.usuarioForm.value;
-
+    this.loading = true;
     this.usuarioService.atualizarUsuario(this.usuario, +this.route.snapshot.params.id ).subscribe(usuario => {
+      this.loading = false;
       this.toastr.success('Usuário atualizado', 'O usuário foi atualizado com sucesso!');
     },(error)=> {
+      this.loading = false;
       this.toastr.error('Usuário não atualizado', 'O usuário não foi atualizado!');
     })
   };

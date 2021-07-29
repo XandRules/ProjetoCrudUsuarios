@@ -1,5 +1,13 @@
 <div class="container mt-3 mb-3">
-    <mdb-card>
+  <mdb-card style="height: 460px;" *ngIf="loading">
+    
+    <div  class="spinner-border text-primary mt-5 mb-5" role="status" style="width: 300px; height: 300px; position: relative; margin: 0 auto;">
+        <span class="visually-hidden"></span>
+    </div>
+
+  </mdb-card>   
+
+    <mdb-card *ngIf="!loading">
         <mdb-card-title>
             <h4 class="text-center mt-3">{{titulo}} Usuário</h4>
         </mdb-card-title>
